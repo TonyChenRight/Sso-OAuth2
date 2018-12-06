@@ -26,11 +26,14 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
                 .secret("huobisecret1")
                 .authorizedGrantTypes("authorization_code","refresh_token")
                 .scopes("all")
-                .and()
+                .autoApprove(true);
+
+        clients.and()
                 .withClient("huobi2")
                 .secret("huobisecret2")
                 .authorizedGrantTypes("authorization_code","refresh_token")
-                .scopes("all");
+                .scopes("all")
+                .autoApprove(true);
     }
 
     @Override
